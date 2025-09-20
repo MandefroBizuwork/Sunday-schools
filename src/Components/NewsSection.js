@@ -76,14 +76,14 @@ export default function NewsSection() {
 
   const categories = useMemo(() => {
     const set = new Set(SAMPLE_ARTICLES.map((a) => a.category));
-    return ["All", ...Array.from(set)];
+    return ["ሁሉንም", ...Array.from(set)];
   }, []);
 
   const filtered = useMemo(() => {
     let arr = SAMPLE_ARTICLES.slice().sort(
       (a, b) => new Date(b.date) - new Date(a.date)
     );
-    if (category !== "All") arr = arr.filter((a) => a.category === category);
+    if (category !== "ሁሉንም") arr = arr.filter((a) => a.category === category);
     if (query.trim()) {
       const q = query.trim().toLowerCase();
       arr = arr.filter(

@@ -1,4 +1,7 @@
 import React from "react";
+
+
+
 import {
   BrowserRouter as Router,
   Routes,
@@ -15,6 +18,8 @@ import Courses from "./Components/Courses";
 import CommonLayout from "./Components/SharedLayout/CommonLayout";
 import NewsSection from "./Components/NewsSection";
 import Videos from "./Components/Videos";
+import CourseDetail from "./Components/CourseDetail";
+import LessonDetail from "./Components/LessonDetail";
 
 function App() {
   return (
@@ -29,11 +34,14 @@ function App() {
               <Route path="NewsSection" element={<NewsSection />} />            
             <Route path="Video" element={<Videos />} />
             <Route path="appointment" element={<Appointment />} />
+            <Route path="courses" element={<Courses />} />
+            <Route path="courses/:Category" element={<CourseDetail />} />
+               <Route path="/courses/:category/:lessonSlug" element={<LessonDetail />} />
             <Route path="*" element={<NotFound />} />
           </Route>
         </Routes>
       </Router>
-   
+  
     </div>
   );
 }
